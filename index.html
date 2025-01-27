@@ -38,7 +38,7 @@
         .icon2 {
             left: calc(50% - 100px); /* Сдвигает вторую иконку влево */
             transform: translateX(-50%);
-            background-image: url('https://i.imgur.com/xdEz1kO.jpeg'); /* Вторая иконка */
+            background-image: url('https://i.imgur.com/kgOC8Gn.png'); /* Вторая иконка */
         }
         .icon::after {
             content: '';
@@ -65,6 +65,25 @@
         .icon2:hover::after {
             opacity: 1; /* Показывает подсветку при наведении */
         }
+
+        /* Стили для кнопки */
+        .button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Центрирует кнопку по горизонтали и вертикали */
+            width: 600px; /* Ширина кнопки */
+            height: 350px; /* Высота кнопки */
+            background-size: cover;
+            background-image: url('https://i.imgur.com/CJ3w2hJ.jpeg'); /* Фоновое изображение кнопки */
+            border: none; /* Убирает стандартную обводку */
+            border-radius: 10px; /* Закругление углов кнопки */
+            cursor: pointer; /* Изменяет курсор на указатель */
+            transition: box-shadow 0.3s; /* Плавный переход для эффекта обводки */
+        }
+        .button:hover {
+            box-shadow: 0 0 0 5px white; /* Создает обводку при наведении */
+        }
     </style>
 </head>
 <body>
@@ -74,6 +93,10 @@
         </a>
         <a href="https://steamcommunity.com/profiles/76561198885362294" target="_blank">
             <div class="icon icon2"></div>
+        </a>
+        <!-- Добавление кнопки -->
+        <a href="https://steamcommunity.com/profiles/76561198885362294/myworkshopfiles/" target="_blank">
+            <div class="button"></div>
         </a>
     </div>
 </body>
