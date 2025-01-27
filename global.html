@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Скрывает прокрутку, если она не нужна */
+        }
+        .background {
+            background-image: url('https://i.imgur.com/uLlNmRN.jpeg'); /* Новое изображение */
+            background-size: cover;
+            background-position: center; /* Центрирует изображение */
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+            position: relative; /* Для позиционирования иконок */
+        }
+        .icon {
+            position: absolute;
+            bottom: 20px; /* Отступ от низа */
+            width: 50px; /* Ширина иконки */
+            height: 50px; /* Высота иконки */
+            background-size: contain; /* Масштабирует изображение, чтобы оно поместилось в элемент */
+            background-repeat: no-repeat; /* Не повторять изображение */
+            transition: transform 0.3s; /* Плавный переход для поднятия */
+            border-radius: 10px; /* Закругление углов */
+            overflow: hidden; /* Скрывает подсветку, если она выходит за пределы иконки */
+        }
+        .icon1 {
+            left: 50%;
+            transform: translateX(-50%); /* Центрирует первую иконку по горизонтали */
+            background-image: url('https://i.imgur.com/E7l78di.png'); /* Первая иконка */
+        }
+        .icon2 {
+            left: calc(50% - 100px); /* Сдвигает вторую иконку влево */
+            transform: translateX(-50%);
+            background-image: url('https://i.imgur.com/xdEz1kO.jpeg'); /* Вторая иконка */
+        }
+        .icon::after {
+            content: '';
+            position: absolute;
+            bottom: -15px; /* Положение подсветки под иконкой */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%; /* Ширина подсветки равна ширине иконки */
+            height: 100px; /* Высота подсветки */
+            background: rgba(222, 168, 255, 0.8); /* Цвет подсветки */
+            border-radius: 5px; /* Закругление углов подсветки */
+            opacity: 0; /* Изначально скрыто */
+            transition: opacity 0.3s; /* Плавный переход для появления */
+        }
+        .icon:hover {
+            transform: translate(-50%, -10px); /* Поднимает иконку при наведении */
+        }
+        .icon:hover::after {
+            opacity: 1; /* Показывает подсветку при наведении */
+        }
+        .icon2:hover {
+            transform: translate(-50%, -10px); /* Поднимает вторую иконку при наведении */
+        }
+        .icon2:hover::after {
+            opacity: 1; /* Показывает подсветку при наведении */
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <a href="https://vk.com/formatpriv" target="_blank">
+            <div class="icon icon1"></div>
+        </a>
+        <a href="https://steamcommunity.com/profiles/76561198885362294" target="_blank">
+            <div class="icon icon2"></div>
+        </a>
+    </div>
+</body>
+</html>
