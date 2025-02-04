@@ -1,54 +1,87 @@
-body {
-    font-size: 16px;
-    padding: 10px;
+body, html {
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Скрывает прокрутку, если она не нужна */
 }
 
-header, footer {
+.background {
+    background-image: url('https://i.imgur.com/koMGRK6.jpeg');
+    background-size: cover;
+    background-position: center; /* Центрирует изображение */
+    background-repeat: no-repeat;
+    height: 100%;
     width: 100%;
-    text-align: center;
-    background-color: #f8f8f8;
-    padding: 10px 0;
+    position: relative; /* Для позиционирования иконок */
 }
 
-main {
-    width: 100%;
-    max-width: 1200px;
+.button {
+    position: absolute;
+    width: 60%; /* Используем относительную ширину */
+    max-width: 230px; /* Максимальная ширина для больших экранов */
+    height: 10%; /* Используем относительную высоту */
+    max-height: 80px; /* Максимальная высота для больших экранов */
+    background: rgba(74, 74, 74, 0.2);
+    border: 3px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex; /* Для центрирования текста */
+    align-items: center; /* Вертикальное центрирование */
+    justify-content: center; /* Горизонтальное центрирование */
+    color: white; /* Цвет текста по умолчанию */
+    font-size: 5vw; /* Размер текста в зависимости от ширины экрана */
+    font-family: 'LibreBaskerville-Bold';
+    transition: background 0.5s ease, border-color 0.3s ease; /* Плавный переход для фона и границы */
 }
 
-/* Для планшетов */
+.button:hover {
+    background: linear-gradient(45deg, #d55700, #321500); /* Градиент при наведении */
+    border-color: white; /* Изменение цвета границы на белый при наведении */
+}
+
+/* Позиционирование кнопок */
+.button1 {
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%); /* Центрируем кнопку по горизонтали */
+}
+
+.button3 {
+    top: 90%;
+    left: 30%;
+}
+
+.button4 {
+    top: 90%;
+    left: 70%;
+}
+
+img {
+    position: absolute; /* Устанавливаем абсолютное позиционирование для логотипа */
+    top: 5%; /* Отступ сверху */
+    left: 5%; /* Отступ слева */
+    width: 20%; /* Ширина логотипа в процентах */
+    max-width: 632px; /* Максимальная ширина логотипа */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+}
+
+/* Медиа-запросы для планшетов */
 @media (min-width: 600px) {
-    body {
-        font-size: 18px;
-        padding: 20px;
+    .button {
+        font-size: 4vw; /* Уменьшаем размер текста для планшетов */
     }
 }
 
-/* Для десктопов */
+/* Медиа-запросы для десктопов */
 @media (min-width: 900px) {
-    body {
-        font-size: 20px;
-        padding: 30px;
+    .button {
+        font-size: 3vw; /* Уменьшаем размер текста для десктопов */
     }
 }
 
-/* Для больших экранов */
+/* Медиа-запросы для больших экранов */
 @media (min-width: 1200px) {
-    body {
-        font-size: 22px;
-        padding: 40px;
+    .button {
+        font-size: 2vw; /* Уменьшаем размер текста для больших экранов */
     }
-}
-
-/* Flexbox для секций */
-main section {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
