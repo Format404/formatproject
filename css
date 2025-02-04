@@ -1,0 +1,28 @@
+body {
+    font-size: 16px;
+    padding: 10px;
+}
+
+/* Для планшетов */
+@media (min-width: 600px) {
+    body {
+        font-size: 18px;
+        padding: 20px;
+    }
+}
+
+/* Для десктопов */
+@media (min-width: 900px) {
+    body {
+        font-size: 20px;
+        padding: 30px;
+    }
+}
+
+/* Для больших экранов */
+@media (min-width: 1200px) {
+    body {
+        font-size: 22px;
+        padding: 40px;
+    }
+}
