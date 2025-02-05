@@ -49,13 +49,11 @@ body, html {
 .button3 {
     top: 90%;
     left: 30%;
-    transform: translateX(-50%); /* Центрируем кнопку по горизонтали */
 }
 
 .button4 {
     top: 90%;
     left: 70%;
-    transform: translateX(-50%); /* Центрируем кнопку по горизонтали */
 }
 
 img {
