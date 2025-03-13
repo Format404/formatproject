@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Format Team</title>
     <link rel="stylesheet" href="styles.css">
-	<title>Format Team</title>
-    <link rel="stylesheet" href="styles.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     <style>
-body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden; /* Скрывает прокрутку, если она не нужна */
         }
+
         .background {
             background-image: url('https://i.imgur.com/koMGRK6.jpeg');
             background-size: cover;
@@ -26,6 +27,7 @@ body, html {
             width: 100%;
             position: relative; /* Для позиционирования иконок */
         }
+
         .button {
             position: absolute;
             width: 230px;
@@ -40,36 +42,49 @@ body, html {
             color: white; /* Цвет текста по умолчанию */
             font-size: 32px; /* Размер текста по умолчанию */
             font-family: 'Montserrat';
-            transition: background 0.5s ease, border-color 0.3s ease; /* Плавный переход для фона и границы */
+            opacity: 0; /* Элементы невидимы изначально */
+            transform: translateY(20px); /* Начальная позиция для анимации */
+            transition: opacity 1s ease, transform 1s ease; /* Плавный переход для прозрачности и трансформации */
         }
-        .button:hover {
-            background: linear-gradient(45deg, #d55700, #321500); /* Градиент при наведении */
-            border-color: white; /* Изменение цвета границы на белый при наведении */
+
+        .button.show {
+            opacity: 1; /* Делает кнопки видимыми */
+            transform: translateY(0); /* Возвращает кнопки на место */
         }
+
         .button1 {
             top: 90%;
             right: 45%;
-            transform: translateX(-50%)
         }
+
         .button3 {
             top: 90%;
             right: 60%;
-transform: translateX(-50%)
         }
+
         .button4 {
             top: 90%;
             right: 30%;
-transform: translateX(-50%)
         }
+
         img {
             position: absolute; /* Устанавливаем абсолютное позиционирование для логотипа */
             top: -100px; /* Отступ сверху */
             left: -90px; /* Отступ слева */
             width: 632px; /* Ширина логотипа */
             height: 400px; /* Высота логотипа */
+            opacity: 0; /* Логотип невиден изначально */
+            transform: translateY(-20px); /* Начальная позиция для анимации */
+            transition: opacity 1s ease, transform 1s ease; /* Плавный переход для прозрачности и трансформации */
+        }
+
+        img.show {
+            opacity: 1; /* Делает логотип видимым */
+            transform: translateY(0); /* Возвращает логотип на место */
         }
     </style>
 </head>
+
 <body>
     <div class="background">
         <span class="button button1" onclick="window.location.href='https://example.com'">Project's</span>
@@ -77,5 +92,21 @@ transform: translateX(-50%)
         <span class="button button4" onclick="window.location.href='https://pay.cloudtips.ru/p/1e3880f5'">Donate</span>
         <img src="https://i.imgur.com/93tbNqD.png" alt="Логотип">
     </div>
+
+    <script>
+        window.onload = function () {
+            setTimeout(function () {
+                const buttons = document.querySelectorAll('.button');
+                const logo = document.querySelector('img');
+                
+                buttons.forEach(button => {
+                    button.classList.add('show'); // Показываем кнопки
+                });
+                
+                logo.classList.add('show'); // Показываем логотип
+            }, 1000); // Задержка в 1000 мс (1 секунда)
+        }
+    </script>
 </body>
+
 </html>
